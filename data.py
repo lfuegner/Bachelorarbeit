@@ -5,7 +5,7 @@ import scipy.stats as st
 
 ### Inputparameter ###
 total_seats: int = 132
-wrong_seats_percentage: float = 0.2 # Options: [0,1] Intervall
+wrong_seats_percentage: float = 0 # Options: [0,1] Intervall
 load_: str ="normal" # Options: "normal" or "high"
 wrong_seats_distance: int = total_seats # Options: [1,132], has to be an Integer, wrongs_seats_distance has to be greater or equal 1 and lower or equal to total_seats here 132, 
 
@@ -69,7 +69,7 @@ for line in lines:
                         "maximum_individual_boarding_time_sd": maximum_individual_boarding_time_sd,
                         "maximum_individual_boarding_time_ci":maximum_individual_boarding_time_ci}
 
-with open(f'data/data_analysis-{load_}-20.json', 'w', encoding='utf-8') as f:
+with open(f'data/data_analysis-{load_}.json', 'w', encoding='utf-8') as f:
         json.dump(data_analysis, f, ensure_ascii=False, indent=4)
 
 print(f"Data saved")
